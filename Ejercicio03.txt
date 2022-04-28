@@ -1,0 +1,29 @@
+let tasks = [
+{
+'name' : 'Buy milk from the shop' ,
+'duration'  : 20 ,
+'priority'  : 1
+},
+{
+'name' : 'Clean the house ',
+'duration' : 120 ,
+'priority' : 3
+},
+{
+'name' : 'Study JS functions ',
+'duration' : 180 ,
+'priority' : 1
+}
+];
+//Ejercicio 3
+//version iterativa
+var sum=0
+for ( var counter = 0; counter <tasks.length ; counter ++) {
+  sum=tasks[counter].duration+sum
+}
+console . log("la suma de la duraion es: ",sum)
+//version funcional
+const suma = tasks
+. map (v => v. duration )
+. reduce (( sum , duration) => sum + duration ) ;
+console . log("la suma de la duraion es: ",suma)
