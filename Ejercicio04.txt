@@ -1,10 +1,17 @@
-
-//Ejercicio 4
-const square = x => x * x;
-function mymap (arr , f){
-  return arr.map(f);  
+//Ejercicio 04
+// Version imperativa
+function mostrarPrecios(arr){
+  r= new Array ();
+  for (var i = 0; i<arr.length; i++){
+    if (arr[i].type == 'suv'){
+      r.push(arr[i].price);
+    }
+  }
+  return r;
 }
-result1 = mymap ([1 , 2 , 3 , 4, 5] , square );
-result2 = mymap ([1 , 4 , 9 , 16 , 25] , Math.sqrt );
-console.log (" result1 :", result1 ); // [1 , 4, 9, 16 , 25]
-console.log (" result2 :", result2 ); // [1 , 2, 3, 4, 5]
+console.log(mostrarPrecios(vehicles));
+// version declarativa
+var arreglo = vehicles . filter ( x=> (x.type == 'suv') );
+//console.log(arr)
+var precios = arreglo.map(x=> x.price)
+console.log(precios)
