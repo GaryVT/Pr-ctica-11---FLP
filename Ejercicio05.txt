@@ -1,14 +1,17 @@
-function isEven ( num ) { return ( num %2 == 0) ; }
-function find_recursive (arr , f){
-  var resultado = [];
-  if(isEven(arr[3])==true){
-    resultado[0]=arr[3];
+//EJERCICIO 5
+//FORMA IMPERATIVA
+function mostrarScore(arr){
+  r= new Array ();
+  for (var i = 0; i<arr.length; i++){
+    if (arr[i].isForceUser == true){
+      r.push(arr[i].shootingScore + arr[i].pilotingScore);
+    }
   }
-
-  if(isEven(arr[4])==true){
-    resultado[1]=arr[4];
-  }
-
-  return resultado;
+  return r;
 }
-console.log(find_recursive([1, 3, 5, 4, 2], isEven)); //[4, 2]
+console.log(mostrarScore(personnel));
+//FORMA DECLARATIVA
+var arr2 = personnel . filter ( x=> (x.isForceUser == true) );
+//console.log(arr)
+var numbers6 = arr2.map(x=> x.pilotingScore + x.shootingScore)
+console.log(numbers6)
